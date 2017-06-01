@@ -1,0 +1,126 @@
+#JSGF V1.0;
+grammar commands;
+
+<person_name> = 
+	KUNAL AMBASTA;
+
+<device_name> = 
+	KEYA;
+
+
+<tv_control> = 
+	( NEXT | 
+	PREVIOUS | 
+	LAST | 
+	FIRST ) CHANNEL ;
+
+<volume_control> = 
+	PLEASE ( INCREASE | 
+	DECREASE | 
+	MUTE | 
+	UNMUTE ) VOLUME;
+
+<media_control> = 
+	( NEXT | 
+	PREVIOUS | 
+	START | 
+	STOP | 
+	PLAY | 
+	PAUSE | 
+	FIRST | 
+	LAST ) (MP THREE SONG | SONG ) ;
+
+<device_control> = 
+	 PLEASE POWER ( ON | OFF ) COFFEE MAKER MACHINE |
+	 PLEASE POWER ( ON | OFF ) WASHING MACHINE |
+	 PLEASE POWER ( ON | OFF ) ( TV | TELEVISION ) |
+	 PLEASE POWER ( ON | OFF ) ( LED LIGHT | LIGHT ) |
+	 PLEASE POWER ( ON | OFF ) ELECTRIC FAN | 
+	 PLEASE POWER ( ON | OFF ) ( AIR COOLER | ELECTRIC COOLER ) | 
+	 PLEASE POWER ( ON | OFF ) ( AC | AIR CONDITIONER ) | 
+	 PLEASE POWER ( ON | OFF ) WATER FILTER |
+	 PLEASE POWER ( OFF | STOP ) EVERYTHING|
+	 KEYA PLEASE ( START | TURN ON ) WEB CAM |
+	 KEYA PLEASE ( STOP | TURN OFF ) WEB CAM |
+	 PLEASE STOP COFFEE MAKER MACHINE |
+	 PLEASE STOP WASHING MACHINE |
+	 PLEASE STOP ( TV | TELEVISION ) |
+	 PLEASE STOP ( LED LIGHT | LIGHT ) |
+	 PLEASE STOP ELECTRIC  FAN |  
+	 PLEASE STOP AIR COOLER | 
+	 PLEASE STOP ELECTRIC  COOLER | 
+	 PLEASE STOP ( AC | AIR CONDITIONER ) |
+	 PLEASE STOP WATER FILTER ;
+
+<camera_control> = 
+	PLEASE ( CAPTURE | 
+	SHOOT | 
+	RECORD ) PHOTO ;
+
+<greeting> = 
+	HELLO | 
+	HI | 
+	GOOD ( MORNING | AFTERNOON | EVENING ) | 
+	BYE | 
+	(TALK TO | SEE ) YOU LATER |
+	 TAKE CARE ;
+
+<about_device> = 
+		INTRODUCE YOURSELF | 
+		WHO ARE YOU | 
+		WHO ( DEVELOPED | DESIGNED ) YOU | 
+		HOW ARE YOU ( DEVELOPED | PROGRAMMED ) | 
+		WHEN WAS YOUR LAST BACKUP | 
+		WHEN DID YOU REFRESH YOURSELF | 
+		WHAT IS YOUR SPECILIZATION |
+		WHAT CAN YOU DO [ FOR ( ME | US ) ] |  
+		HOW CAN YOU MAKE ( OUR | MY ) LIFE ( BETTER | EASIER ) ;
+
+<date_time> = 
+	WHAT IS THE ( DAY | DATE | TIME ) (TODAY | NOW) ;
+
+<queries> = 
+	HOW ARE YOU | 
+	HOW LONG HAVE YOU BEEN RUNNING | 
+	PLEASE CHECK LOCAL WEATHER CONDITION		 |
+	CHECK INFORMATION ON INTERNET |
+	CHECK INFORMATION ON WIKIPEDIA |
+	WHATS THE WEATHER FORECASTING |  
+	WAKE UP |   
+	TELL ME A JOKE | 
+	HOW TO BECOME SUCCESSFUL | 
+	( IDENTIFY | RECOGNIZE ) (OBJECT | PERSON) USING YOUR CAMERA ;
+
+<device_question> = 
+	HOW MUCH [ FREE ] ( DISK SPACE | MEMORY ) DO YOU HAVE [ NOW ] |
+	HOW OLD ARE YOU |
+	IS INTERNET CONNECTED |
+	WHO IS <person_name> |
+	ANY INFORMATION OR NOTIFICATION |
+	IS THERE ANY PROBLEM ;
+
+<pi_command> = 
+	LISTEN KEYA |
+	HEY KEYA |
+	KEYA PLEASE SHUTDOWN NOW | 
+	KEYA PLEASE SHUTDOWN | 
+	KEYA PLEASE SUSPEND | 
+	KEYA PLEASE REBOOT NOW |
+	KEYA PLEASE SET VOLUME FOR SONG | 
+	KEYA PLEASE SLEEP ;
+
+public <command> =
+   			<device_question>  |
+			<queries>	   |
+			<greeting>	   |
+			<pi_command>	   |
+			<date_time>	   |
+			<about_device>	   |
+			<device_control>   |
+			<camera_control>   |
+			<media_control>    |
+			<volume_control>   |
+			<tv_control>	   ;;
+
+
+	
